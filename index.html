@@ -12,7 +12,10 @@
 
 <body>
     <center>
+        <div style="width: 25%;">
         <h1 class="mt-4">TIC TOC TOE</h1>
+        <hr class="border border-info border-2 opacity-100">
+    </div>
     </center>
     <div class="container d-flex">
         <div class="main-box row mt-3 d-flex">
@@ -28,15 +31,20 @@
             <div class="box col-md-4 col-lg-4 col-sm-4 bb-0 br-0"><span class="boxtext"></span></div>
 
         </div>
-        <div class="second-box p-5 mt-5 mx-5 ">
-            <div class="info d-flex ">
-                <span style="font-size: 1.75rem;font-weight: 500;" class="info">Turn for X</span>
+    <div class="second-box-main">
+        <div class="second-box  mt-5 d-flex ">
+            <div class="info d-flex mx-4 mt-2">
+                <span style="font-size: 1.75rem;font-weight: 500;" class="info">Turn for X <hr class="border border-info border-2  opacity-100 mt-1"></span>
+                
             </div>
-            <div><button class="btn btn-danger mt-4" >Reset</button></div>
-            <div class="win mt-5">
-                <img class="img-fluid" src="win.png" alt="">
+            <div>
+                <button class="btn btn-info mx-5 mt-3 " >Reset</button>
             </div>
         </div>
+        <div class="win mx-5">
+           <center> <img class="img-fluid" src="win.png" alt=""></center>
+        </div>
+    </div>
     </div>
     <script src="app.js"></script>
 </body>

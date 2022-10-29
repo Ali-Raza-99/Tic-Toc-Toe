@@ -1,5 +1,8 @@
 body{
     margin: 0;
+    /* background-color: rgb(254, 249, 240) !important; */
+    background-color: rgb(19, 19, 19) !important;
+    color: white !important;
     padding: 0;
 }
 .container{
@@ -11,12 +14,12 @@ body{
 }
 .box{
     /* width: 10%; */
-    border: 1px solid black;
+    border: 2px solid white;
     height: 162px;
     flex-grow: 3;
 }
 .box:hover{
-    background-color: rgb(251, 225, 231);
+    background-color: rgb(30, 36, 42);
     cursor: pointer;
 }
 .main-box{
@@ -50,10 +53,19 @@ p{
     height: 0px;
     transition: height 0.7s ease-in-out;
 }
+/* .win{
+    border: 1px solid black;
+} */
 button{
     width: 123px;
 }
-
+.second-box{
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 20px;
+}
 @media only screen and (max-width: 480px) {
     .box {
         height: 105px !important;
@@ -67,6 +79,10 @@ button{
 @media only screen and (max-width: 575px) {
     .row .box{
         width: 30%!important;
+    }
+    .box{
+
+        height: 84px !important;
     }
 } 
 @media only screen and (max-width: 766px) {
