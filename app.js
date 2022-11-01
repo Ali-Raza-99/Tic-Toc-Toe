@@ -42,12 +42,9 @@ const checkWin = () => {
 
 
 Array.from(boxes).forEach(element => {
-    let boxtext = element.querySelector('.boxtext')
-
-
+    let boxtext = element.querySelector('.boxtext');
     element.addEventListener('click', () => {
-     
-        
+
         if (boxtext.innerText == '') {
             boxtext.innerText = turn
             turn = changeTurn()
@@ -58,7 +55,7 @@ Array.from(boxes).forEach(element => {
             }
         }
 
-      
+        gameOver();
 
     })
 })
@@ -76,11 +73,29 @@ btn.addEventListener('click', () => {
     })
     turn = 'X'
     document.querySelector('.win').getElementsByTagName('img')[0].style.height = "0px"
-    document.getElementsByClassName("info")[0].innerHTML = `<span style="font-size: 1.75rem;font-weight: 500;" class="info">Turn for ${turn} <hr class="border border-danger border-2 opacity-100 mt-1"></span> `
+    document.getElementsByClassName("info")[0].innerHTML = `<span style="font-size: 1.75rem;font-weight: 500;" class="info">Turn for ${turn} <hr class="border border-info border-2 opacity-100 mt-1"></span> `
     gameover = false
 })
 
-
+function gameOver() {
+    let boxtext = document.getElementsByClassName('boxtext')
+    let count = 0
+    Array.from(boxtext).forEach(element => {
+        if (element.innerHTML != "") {
+            count = count += 1
+        }
+    });
+    console.log(count)
+    if (count == 9) {
+        document.getElementsByClassName("info")[0].innerHTML = `<span style="font-size: 1.75rem;font-weight: 500;" class="info">Game Over <hr class="border border-info border-2 opacity-100 mt-1"></span>`
+        setTimeout(() => {
+            Array.from(boxtext).forEach(element =>{
+                element.innerHTML = ''
+            })
+            document.getElementsByClassName("info")[0].innerHTML = `<span style="font-size: 1.75rem;font-weight: 500;" class="info">Turn for X  <hr class="border border-info border-2 opacity-100 mt-1"></span>`
+        }, 500);
+    }
+}
 
 
 
